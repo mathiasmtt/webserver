@@ -1,26 +1,42 @@
 # Servidor Web en Rust
 
-Un servidor web moderno y eficiente construido con Rust y Actix-web, que demuestra las capacidades de Rust para el desarrollo web.
+Un servidor web moderno y eficiente construido con Rust y Actix-web, que demuestra las capacidades de Rust para el desarrollo web. Este proyecto combina la potencia y seguridad de Rust en el backend con una interfaz de usuario moderna y adaptable.
 
-## Características
-- 🚀 Alto rendimiento gracias a la eficiencia de Rust
+## 🚀 Características
+
+### Backend (Rust)
+- ⚡ Alto rendimiento gracias al sistema de actores de Actix-web
 - 🛡️ Seguridad garantizada por el sistema de tipos de Rust
-- 🌐 API moderna basada en Actix-web
-- 📱 Interfaz de usuario responsive y moderna
-- ⏰ Muestra en tiempo real la hora del servidor
-- 🎨 Diseño moderno con TailwindCSS y FontAwesome
+- 🔄 Manejo eficiente de solicitudes concurrentes
+- ⏰ Servidor de tiempo real para mostrar la hora del servidor
+- 🎯 Zero-cost abstractions de Rust para máximo rendimiento
 
-## Tecnologías Utilizadas
-- Rust
-- Actix-web (Framework web)
-- TailwindCSS (Framework CSS)
-- FontAwesome (Iconos)
-- Tera (Sistema de templates)
+### Frontend
+- 🎨 Diseño moderno y responsive con TailwindCSS
+- 🌓 Toggle de tema claro/oscuro con persistencia
+- 📱 Interfaz adaptativa para todos los dispositivos
+- ⚡ Transiciones y animaciones suaves
+- 🔍 Navegación intuitiva con scroll suave
 
-## Requisitos Previos
+## 🛠️ Tecnologías Utilizadas
+
+### Backend
+- **Rust** - Lenguaje de programación seguro y eficiente
+- **Actix-web** - Framework web de alto rendimiento
+- **Tera** - Motor de plantillas para Rust
+- **Tokio** - Runtime asíncrono para Rust
+
+### Frontend
+- **TailwindCSS** - Framework CSS utilitario
+- **FontAwesome** - Iconografía moderna
+- **LocalStorage API** - Persistencia de preferencias de usuario
+- **JavaScript** - Interactividad y gestión del tema
+
+## 📋 Requisitos Previos
 - Rust y Cargo instalados en tu sistema
+- Navegador web moderno con JavaScript habilitado
 
-## Instalación
+## 🚀 Instalación
 
 1. Clona el repositorio:
 ```bash
@@ -38,33 +54,35 @@ cargo run --release
 http://localhost:8080
 ```
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 ```
 webserver/
 ├── src/
-│   └── main.rs          # Código fuente principal
+│   └── main.rs          # Código del servidor Rust
 ├── templates/
-│   └── index.html       # Plantilla principal con diseño moderno
-├── static/              # Directorio para archivos estáticos
-├── Cargo.toml           # Configuración y dependencias
-└── README.md            # Documentación
+│   └── index.html       # Plantilla principal con UI moderna
+├── static/              # Archivos estáticos
+├── Cargo.toml           # Dependencias y configuración de Rust
+└── README.md           # Documentación
 ```
 
-## Características Detalladas
+## 🎯 Características Detalladas
 
-### Frontend
-- Diseño moderno y responsive usando TailwindCSS
-- Iconografía con FontAwesome
-- Navegación suave entre secciones
-- Visualización en tiempo real de la hora del servidor
+### Sistema de Temas
+- Toggle intuitivo entre tema claro y oscuro
+- Persistencia de preferencias usando LocalStorage
+- Detección automática del tema del sistema
+- Transiciones suaves entre temas
+- Diseño consistente en ambos modos
 
-### Backend
-- Servidor web de alto rendimiento con Actix-web
-- Sistema de templates con Tera
-- Manejo eficiente de rutas y recursos estáticos
-- Arquitectura modular y extensible
+### Arquitectura Backend
+- Servidor web asíncrono de alto rendimiento
+- Manejo eficiente de plantillas con Tera
+- Rutas optimizadas para servir contenido estático
+- Implementación thread-safe para concurrencia
+- Gestión de estado del servidor en tiempo real
 
-## Contribución
+## 🤝 Contribución
 Las contribuciones son bienvenidas. Por favor:
 1. Haz fork del repositorio
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
@@ -72,8 +90,8 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## Licencia
+## 📄 Licencia
 Este proyecto está bajo la Licencia MIT.
 
-## Autor
+## ✨ Autor
 Mathias
