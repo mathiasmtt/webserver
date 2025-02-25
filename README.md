@@ -60,13 +60,64 @@ webserver/
 ├── src/
 │   └── main.rs          # Código del servidor Rust
 ├── templates/
-│   └── index.html       # Plantilla principal con UI moderna
+│   ├── base.html        # Template base con estructura común
+│   ├── index.html       # Página de inicio
+│   ├── about.html       # Página "Acerca de"
+│   └── contact.html     # Página de contacto
 ├── static/              # Archivos estáticos
 ├── Cargo.toml           # Dependencias y configuración de Rust
 └── README.md           # Documentación
 ```
 
+## 📋 Actualizaciones Recientes
+
+### Sistema de Múltiples Templates
+Hemos implementado un sistema de templates que incluye:
+
+- **Template Base**: Creamos un `base.html` que contiene la estructura común para todas las páginas, incluyendo:
+  - Navegación con enlaces a todas las páginas
+  - Footer consistente
+  - Configuración de TailwindCSS
+  - Sistema de cambio de tema (claro/oscuro)
+
+- **Páginas Implementadas**:
+  - **Inicio (`/`)**: Muestra la página principal con información del servidor y características
+  - **Acerca de (`/about`)**: Información sobre el equipo y tecnologías utilizadas
+  - **Contacto (`/contact`)**: Formulario de contacto e información de contacto
+
+### Mejoras Técnicas
+- Implementación de una instancia global de Tera para mejorar el rendimiento
+- Manejo adecuado de errores en la renderización de templates
+- Estructura de rutas clara y semántica
+- Diseño responsive adaptado a todos los dispositivos
+
+### Instrucciones de Uso
+Para ejecutar el servidor:
+```bash
+# Compilar y ejecutar en modo desarrollo
+cargo run
+
+# Compilar y ejecutar en modo producción
+cargo run --release
+```
+
+Una vez iniciado, el servidor estará disponible en: http://127.0.0.1:8080
+
+### Próximos Pasos
+- Implementación de un sistema de base de datos
+- Agregar funcionalidad al formulario de contacto
+- Implementar autenticación de usuarios
+
 ## 🎯 Características Detalladas
+
+### Sistema de Navegación
+- Navegación intuitiva entre las diferentes páginas
+- Estructura de URL clara y semántica:
+  - `/` - Página de inicio
+  - `/about` - Página "Acerca de"
+  - `/contact` - Página de contacto
+- Diseño responsive adaptado a todos los dispositivos
+- Menú de navegación consistente en todas las páginas
 
 ### Sistema de Temas
 - Toggle intuitivo entre tema claro y oscuro

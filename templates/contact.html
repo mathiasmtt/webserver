@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Servidor Web Rust{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            {{ title }}
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            Estamos aquí para ayudarte. Ponte en contacto con nosotros a través de cualquiera de los siguientes medios.
+        </p>
+    </div>
+    
+    <!-- Información de contacto -->
+    <div class="grid md:grid-cols-2 gap-12 mb-12">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-colors">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Información de Contacto</h2>
+            
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                        <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
+                        <p class="text-gray-600 dark:text-gray-300">{{ email }}</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                        <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ubicación</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                        <i class="fas fa-clock text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Horario</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Lunes a Viernes: 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Formulario de contacto -->
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-colors">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envíanos un Mensaje</h2>
+            
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Mapa -->
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-colors mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Nuestra Ubicación</h2>
+        <div class="h-64 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+            <p class="text-gray-500 dark:text-gray-400 text-center">
+                <i class="fas fa-map text-4xl mb-2"></i><br>
+                Mapa interactivo aquí
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
