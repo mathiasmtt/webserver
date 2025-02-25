@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor Web Rust - Solución Moderna</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-gear text-blue-600 text-2xl mr-2"></i>
+                    <span class="font-semibold text-xl text-gray-800">RustServer</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                    <a href="#caracteristicas" class="text-gray-600 hover:text-blue-600">Características</a>
+                    <a href="#documentacion" class="text-gray-600 hover:text-blue-600">Documentación</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-12 md:pt-32">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Servidor Web en <span class="text-blue-600">Rust</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Una solución moderna, rápida y segura para tus aplicaciones web,
+                    construida con el poder de Rust y Actix-web.
+                </p>
+                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                    <p class="text-gray-700">
+                        <i class="far fa-clock text-blue-600 mr-2"></i>
+                        Hora del servidor: <span class="font-mono">{{ current_time }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="caracteristicas" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Características Principales</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <i class="fas fa-bolt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Alto Rendimiento</h3>
+                    <p class="text-gray-600">Aprovecha la velocidad y eficiencia de Rust para un rendimiento excepcional.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Seguridad Garantizada</h3>
+                    <p class="text-gray-600">Sistema de tipos y gestión de memoria seguros por diseño.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">API Moderna</h3>
+                    <p class="text-gray-600">Interfaz limpia y moderna basada en Actix-web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentación -->
+    <section id="documentacion" class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Documentación</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="prose max-w-none">
+                    <p class="mb-4">
+                        Este servidor web está construido utilizando las siguientes tecnologías:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Rust - Lenguaje de programación seguro y eficiente</li>
+                        <li>Actix-web - Framework web moderno para Rust</li>
+                        <li>TailwindCSS - Framework CSS utilitario</li>
+                    </ul>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <code class="text-sm">
+                            cargo run --release
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2025 RustServer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
