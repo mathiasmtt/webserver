@@ -90,6 +90,19 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+
+## 📸 Algunas Imagenes de su aspecto
+
+<div align="center">
+
+![Vista del tema claro](docs/images/light-theme.png)
+
+![Vista del tema oscuro](docs/images/dark-theme.png)
+
+*Servidor web en Rust con soporte para tema claro y oscuro*
+
+</div>
+
 ## 📄 Licencia
 Este proyecto está bajo la Licencia MIT.
 
