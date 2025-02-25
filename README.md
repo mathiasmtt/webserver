@@ -75,6 +75,43 @@ webserver/
 - Transiciones suaves entre temas
 - Diseño consistente en ambos modos
 
+### Sistema de Plantillas
+- Uso de Tera como motor de plantillas para Rust
+- Soporte para variables dinámicas como `{{ current_time }}`
+- Carga eficiente de plantillas desde archivos
+- Manejo de errores robusto para problemas de renderizado
+- Separación clara entre lógica y presentación
+
+### Solución de Problemas Comunes
+
+#### Problemas con la Renderización de Plantillas
+Si las plantillas no se renderizan correctamente, verifica:
+
+1. **Rutas de archivos**: Asegúrate de que la estructura de directorios sea correcta:
+   ```
+   webserver/
+   └── templates/
+       └── index.html
+   ```
+
+2. **Carga de Plantillas**: El método recomendado es cargar plantillas específicas:
+   ```rust
+   // En lugar de usar patrones glob como "templates/**/*"
+   tera.add_template_file("ruta/a/templates/index.html", Some("index.html"))
+   ```
+
+3. **Variables en Plantillas**: Verifica que todas las variables usadas en las plantillas
+   estén definidas en el contexto:
+   ```rust
+   let mut context = Context::new();
+   context.insert("current_time", &current_time.to_string());
+   ```
+
+4. **Logs de Depuración**: Habilita los mensajes de depuración para identificar problemas:
+   ```rust
+   println!("Ruta del template: {}", template_path_str);
+   ```
+
 ### Arquitectura Backend
 - Servidor web asíncrono de alto rendimiento
 - Manejo eficiente de plantillas con Tera
