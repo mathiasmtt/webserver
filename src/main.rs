@@ -21,7 +21,7 @@ static TEMPLATES: Lazy<Tera> = Lazy::new(|| {
         let entry = entry.unwrap();
         println!("  - {}", entry.path().display());
     }
-    
+    // Cargar los templates
     let tera = match Tera::new(&template_pattern) {
         Ok(t) => {
             println!("Templates cargados correctamente:");
