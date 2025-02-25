@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servidor Web Rust - Solución Moderna</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos para el tema oscuro */
+        .dark {
+            color-scheme: dark;
+        }
+        
+        /* Transiciones suaves para el cambio de tema */
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors">
     <!-- Navegación -->
-    <nav class="bg-white shadow-lg fixed w-full z-10">
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10 transition-colors">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <i class="fas fa-gear text-blue-600 text-2xl mr-2"></i>
-                    <span class="font-semibold text-xl text-gray-800">RustServer</span>
+                    <i class="fas fa-gear text-blue-600 dark:text-blue-400 text-2xl mr-2"></i>
+                    <span class="font-semibold text-xl text-gray-800 dark:text-white">RustServer</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#inicio" class="text-gray-600 hover:text-blue-600">Inicio</a>
-                    <a href="#caracteristicas" class="text-gray-600 hover:text-blue-600">Características</a>
-                    <a href="#documentacion" class="text-gray-600 hover:text-blue-600">Documentación</a>
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Inicio</a>
+                        <a href="#caracteristicas" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Características</a>
+                        <a href="#documentacion" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Documentación</a>
+                    </div>
+                    <!-- Toggle de Tema -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+                        <i class="fas fa-moon text-blue-400 hidden dark:inline"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -29,16 +49,16 @@
     <section id="inicio" class="pt-24 pb-12 md:pt-32">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Servidor Web en <span class="text-blue-600">Rust</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                    Servidor Web en <span class="text-blue-600 dark:text-blue-400">Rust</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
                     Una solución moderna, rápida y segura para tus aplicaciones web,
                     construida con el poder de Rust y Actix-web.
                 </p>
-                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
-                    <p class="text-gray-700">
-                        <i class="far fa-clock text-blue-600 mr-2"></i>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md inline-block">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        <i class="far fa-clock text-blue-600 dark:text-blue-400 mr-2"></i>
                         Hora del servidor: <span class="font-mono">{{ current_time }}</span>
                     </p>
                 </div>
@@ -47,45 +67,45 @@
     </section>
 
     <!-- Características -->
-    <section id="caracteristicas" class="py-12 bg-white">
+    <section id="caracteristicas" class="py-12 bg-white dark:bg-gray-800 transition-colors">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Características Principales</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Características Principales</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <i class="fas fa-bolt text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Alto Rendimiento</h3>
-                    <p class="text-gray-600">Aprovecha la velocidad y eficiencia de Rust para un rendimiento excepcional.</p>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors">
+                    <i class="fas fa-bolt text-4xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Alto Rendimiento</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Aprovecha la velocidad y eficiencia de Rust para un rendimiento excepcional.</p>
                 </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Seguridad Garantizada</h3>
-                    <p class="text-gray-600">Sistema de tipos y gestión de memoria seguros por diseño.</p>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors">
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Seguridad Garantizada</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Sistema de tipos y gestión de memoria seguros por diseño.</p>
                 </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">API Moderna</h3>
-                    <p class="text-gray-600">Interfaz limpia y moderna basada en Actix-web.</p>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg transition-colors">
+                    <i class="fas fa-code text-4xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">API Moderna</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Interfaz limpia y moderna basada en Actix-web.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Documentación -->
-    <section id="documentacion" class="py-12 bg-gray-50">
+    <section id="documentacion" class="py-12 bg-gray-50 dark:bg-gray-900 transition-colors">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Documentación</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <div class="prose max-w-none">
-                    <p class="mb-4">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">Documentación</h2>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition-colors">
+                <div class="prose max-w-none dark:prose-invert">
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
                         Este servidor web está construido utilizando las siguientes tecnologías:
                     </p>
-                    <ul class="list-disc pl-6 mb-4">
+                    <ul class="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
                         <li>Rust - Lenguaje de programación seguro y eficiente</li>
                         <li>Actix-web - Framework web moderno para Rust</li>
                         <li>TailwindCSS - Framework CSS utilitario</li>
                     </ul>
-                    <div class="bg-gray-100 p-4 rounded-md">
-                        <code class="text-sm">
+                    <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-md">
+                        <code class="text-sm text-gray-800 dark:text-gray-200">
                             cargo run --release
                         </code>
                     </div>
@@ -95,7 +115,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8 transition-colors">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p>&copy; 2025 RustServer. Todos los derechos reservados.</p>
         </div>
@@ -111,6 +131,27 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Funcionalidad del toggle de tema
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Verificar si hay una preferencia guardada
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Manejar el cambio de tema
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
         });
     </script>
 </body>
